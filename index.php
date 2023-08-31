@@ -37,15 +37,15 @@
                     <br />
                     <div class="list-group">
                         <?php
-                            foreach($result as $row)
-                            {
-                              $style = '';
-                              if($row["task_status"] == 'yes')
-                              {
-                                $style = 'text-decoration: line-through';
-                              }
-                              echo '<a href="#" style="'.$style.'" class="list-group-item" id="list-group-item-'.$row["task_list_id"].'" data-id="'.$row["task_list_id"].'">'.$row["task_details"].' <span class="badge" data-id="'.$row["task_list_id"].'">X</span></a>';
-                            }
+                            global $result;
+                            foreach ((array) $result as $row) {
+                                $style = '';
+                                if($row["task_status"] == 'yes')
+                                {
+                                  $style = 'text-decoration: line-through';
+                                }
+                                echo '<a href="#" style="'.$style.'" class="list-group-item" id="list-group-item-'.$row["task_list_id"].'" data-id="'.$row["task_list_id"].'">'.$row["task_details"].' <span class="badge" data-id="'.$row["task_list_id"].'">X</span></a>';
+                            } 
                         ?>
                     </div>
                 </div>

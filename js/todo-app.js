@@ -39,6 +39,7 @@ $(document).ready(function(){
     });
   
     $(document).on('click', '.badge', function(){
+         
      var task_list_id = $(this).data('id');
      $.ajax({
       url:"delete_task.php",
@@ -49,6 +50,5 @@ $(document).ready(function(){
        $('#list-group-item-'+task_list_id).fadeOut('slow');
       }
      })
-    });
-  
+    });  
 });
